@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from "vue";
+import beepUrl from "../sounds/beep.mp3";
+import voiceUrl from "../sounds/voice.mp3";
 
 const props = defineProps<{
   playSound: boolean;
@@ -64,9 +66,9 @@ onUnmounted(() => {
   }
 });
 
-const beep = new Audio("/sounds/beep.mp3");
+const beep = new Audio(beepUrl);
 beep.loop = true;
-const voice = new Audio("/sounds/voice.mp3");
+const voice = new Audio(voiceUrl);
 voice.loop = true;
 </script>
 
