@@ -7,8 +7,8 @@ const props = defineProps<{
 const step = defineModel<number>({ default: 0 });
 
 const virus = ref("");
-let interval: number | null = null;
-let timeout: number | null = null;
+let interval: ReturnType<typeof setInterval> | null = null;
+let timeout: ReturnType<typeof setTimeout> | null = null;
 
 let beforeSize = { width: window.innerWidth, height: window.innerHeight };
 const onResize = () => {
